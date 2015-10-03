@@ -2,6 +2,13 @@
 namespace PHPGit;
 use Symfony\Component\Process\Process;
 
+/**
+ * Class PHPGit
+ *
+ * Easy to use git in php
+ *
+ * @package PHPGit
+ */
 class PHPGit {
 	/** @var string path to git bin*/
 	protected static $binPath = null;
