@@ -48,7 +48,7 @@ class PHPGit {
 	 */
 	public function exec(){
 		$args = func_get_args();
-		$this->lastProcess = $this->getProcessBuilder()->getProcess($args);
+		$this->lastProcess = $this->processBuilder->getProcess($args);
 		$this->lastProcess->run();
 		return $this->lastProcess;
 	}
