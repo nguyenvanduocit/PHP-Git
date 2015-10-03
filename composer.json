@@ -1,5 +1,10 @@
 {
     "name": "nguyenvanduocit/php-git",
+    "type": "library",
+    "description": "PHP wrap for git command line",
+    "homepage": "https://github.com/nguyenvanduocit/PHP-Git",
+    "keywords": ["git", "commandline"],
+    "license": "MIT",
     "authors": [
         {
             "name": "nguyenvanduocit",
@@ -18,6 +23,11 @@
     "autoload-dev": {
         "psr-4": {
             "PHPGit\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1.x-dev"
         }
     }
 }
