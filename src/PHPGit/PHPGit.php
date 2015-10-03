@@ -18,6 +18,13 @@ class PHPGit {
 	protected $processBuilder = null;
 	/** @var Process the last process */
 	protected $lastProcess = null;
+
+	/**
+	 * Constructor
+	 *
+	 * @param      $repoPath
+	 * @param null $binPath
+	 */
 	public function __construct( $repoPath, $binPath = null ){
 		$this->repoPath = $repoPath;
 		if(!$binPath){
