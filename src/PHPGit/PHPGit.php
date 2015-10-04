@@ -43,6 +43,7 @@ class PHPGit {
 			case 'LINUX':
 				return '/usr/local/git';
 			case 'WIN':
+			case 'WINNT':
 				return 'git';
 			default:
 				throw new \InvalidArgumentException('Can not detect bin path');
