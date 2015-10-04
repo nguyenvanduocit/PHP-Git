@@ -60,6 +60,9 @@ class PHPGit {
 		$this->lastProcess->run();
 		return $this->lastProcess;
 	}
+	public function exist(){
+		return file_exists($this->repoPath.DIRECTORY_SEPARATOR.'.git');
+	}
 	/**
 	 * get $binPath
 	 *
