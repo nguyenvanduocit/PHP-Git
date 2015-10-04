@@ -49,6 +49,34 @@ class PHPGit {
 				throw new \InvalidArgumentException('Can not detect bin path');
 		}
 	}
+	/**
+	 * check if git is exist in repo directory
+	 *
+	 * @return bool
+	 */
+	public function exist(){
+		return file_exists($this->repoPath.DIRECTORY_SEPARATOR.'.git');
+	}
+
+	/**
+	 * get all upstream
+	 */
+	public function remotes($name = 'origin'){
+		$steams = array();
+		$process = $this->exec('remote', '-v');
+		if($process->isSuccessful()){
+			$output = $process->getOutput();
+			$lines = Util::parseOutputRaw($output);
+			$re = "/({$name})\\t(.*)\\s\\((\\w+)\\)/";
+			foreach($lines as $line){
+				preg_match($re, $line, $matches);
+				if($matches && count($matches) == 4){
+					$steams[$matches['3']] = $matches[2];
+				}
+			}
+		}
+		return $steams;
+	}
 
 	/**
 	 * Excute a command
@@ -60,9 +88,7 @@ class PHPGit {
 		$this->lastProcess->run();
 		return $this->lastProcess;
 	}
-	public function exist(){
-		return file_exists($this->repoPath.DIRECTORY_SEPARATOR.'.git');
-	}
+
 	/**
 	 * get $binPath
 	 *
