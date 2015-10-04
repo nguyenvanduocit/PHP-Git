@@ -1,0 +1,1 @@
+If you get error about crt, you may look for that post : http://stackoverflow.com/questions/3778042/github-error-cloning-my-private-repository
